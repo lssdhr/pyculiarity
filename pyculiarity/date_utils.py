@@ -18,8 +18,7 @@ def format_timestamp(indf, index=0):
 
     column = indf.iloc[:,index]
 
-    if match("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2} \\+\\d{4}$",
-             column[0]):
+    if match("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2} \\+\\d{4}$",str(column[0])):
         column = date_format(column, "%Y-%m-%d %H:%M:%S")
     elif match("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$", str(column[0])):
         column = date_format(column, "%Y-%m-%d %H:%M:%S")

@@ -150,7 +150,7 @@ def detect_ts(df, max_anoms=0.10, direction='pos',
 
     if gran == 'sec':
     	# Convert the timestamp column into string format
-    	df.timestamp = df.timestamp.dt.strftime("%Y-%m-%d %H:%M:00")
+        df.timestamp = df.timestamp.dt.strftime("%Y-%m-%d %H:%M:00")
         df.timestamp = date_format(df.timestamp, "%Y-%m-%d %H:%M:00")
         df = format_timestamp(df.groupby('timestamp').aggregate(np.sum))
 
